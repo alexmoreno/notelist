@@ -1,0 +1,19 @@
+{
+  "name": "notelist",
+  "version": "0.9.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "angular-local-storage": "~0.2.2",
+    "gulp": "~3.9.0",
+    "gulp-angular-modules": "~0.1.8",
+    "gulp-inject": "~3.0.0",
+    "gulp-sass": "~2.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alex Moreno",
+  "license": "BSD-2-Clause"
+}
