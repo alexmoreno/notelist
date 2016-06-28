@@ -1,3 +1,7 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -42,9 +46,20 @@ table {
   border-spacing: 0; }
 
 /*  */
+* {
+  -webkit-transition: all 0.1s ease;
+  -moz-transition: all 0.1s ease;
+  -ms-transition: all 0.1s ease;
+  -o-transition: all 0.1s ease; }
+
 html, body {
   height: 100%;
-  width: 100%; }
+  width: 100%;
+  font-family: 'Dosis', sans-serif; }
+
+textarea, input {
+  font-family: 'Dosis', sans-serif;
+  font-size: 16px; }
 
 header {
   padding: 2%;
@@ -60,7 +75,8 @@ textarea {
 .wrapper {
   width: 100%;
   height: 100%;
-  float: left; }
+  float: left;
+  overflow: hidden; }
 
 #notepad-title {
   float: left;
@@ -68,7 +84,7 @@ textarea {
   padding: 1.1% 2.9%;
   border: 0;
   font-size: 26px;
-  color: #888; }
+  color: #888888; }
 
 #notepad {
   border: 0; }
@@ -99,10 +115,13 @@ textarea {
 
 .list-tasks {
   width: 30%;
-  float: left; }
+  float: left;
+  height: 100%; }
   .list-tasks ul {
     width: 100%;
-    float: left; }
+    float: left;
+    height: 100%;
+    overflow: scroll; }
     .list-tasks ul li {
       padding: 10px;
       border-bottom: 1px solid #ccc; }
@@ -112,7 +131,8 @@ textarea {
       .list-tasks ul li:hover .task-excerpt, .list-tasks ul li:hover .task-title {
         color: white; }
       .list-tasks ul li:hover .task-action {
-        display: block; }
+        visibility: visible;
+        opacity: 1; }
   .list-tasks a {
     text-decoration: none;
     color: #888; }
@@ -140,11 +160,14 @@ textarea {
   cursor: pointer; }
 
 .task-action {
-  display: none; }
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.1s linear; }
 
 .list-task-title {
   width: 100%;
   clear: both;
   font-size: 26px;
   margin-bottom: 20px;
-  float: left; }
+  float: left;
+  color: #333333; }

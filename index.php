@@ -4,15 +4,15 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Dosis:400' rel='stylesheet' type='text/css'>
+  	
 	<title>Notepad da alegria</title>
 	<link rel="stylesheet" href="./assets/css/style.css">
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.js"></script>
 	
 	<script src="node_modules/angular-local-storage/dist/angular-local-storage.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+	
 	<script src="app/src/init/gulp-angular-modules.js"></script>
 	
 	
@@ -34,12 +34,14 @@
 		<div class="list-tasks">
 		<div class="list-tasks-menu">
 			<div class="list-task-title">Tasks</div>
-			<a href="" ng-click='addTask()'><i class="fa fa-plus" aria-hidden="true"></i>
- Task</a>
+			<a href="" ng-click='addTask()'><i class="fa fa-plus" aria-hidden="true"></i>Task</a>  
+			<a href="" ng-click='exportTasks()'><i class="fa fa-upload" aria-hidden="true"></i>	Export  </a>
+			<a href="" ng-click='importTasks()'><i class="fa fa-download" aria-hidden="true"></i> Import </a>
+
 			<span class='task-counter'> {{tasks.length}} tasks</span>
 		</div>
 			<ul>
-				<li class='task-listed' ng-repeat="task in tasks" ng-class="{'focused-task': task.focused }"  ng-click='focus($index)'>
+				<li class='task-listed' ng-repeat="task in tasks track by $index" ng-class="{'focused-task': task.focused }"  ng-click='focus($index)'>
 
 					<a href="" class='task-title'>{{task.title}}</a>
 					<a href="" ng-click='delete($index)' class='task-delete task-action'><i class="fa fa-trash" aria-hidden="true"></i></a>
