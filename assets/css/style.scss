@@ -43,6 +43,11 @@ table {
 }
 
 
+/*  */
+
+$light-gray: #ccc;
+$dark-gray: #888;
+
 html,body{
 	height: 100%;
 	width: 100%;
@@ -65,16 +70,26 @@ textarea{
 	float: left;
 }
 
-#task-title{
+#notepad-title{
 	float: left;
     width: 94%;
     padding: 1.1% 2.9%;
+    border: 0;
+    font-size: 26px;
+    color: $dark-gray;
+}
+
+
+#notepad{
+	border: 0
 }
 .notepad-container{
 	float: left;
 	height: 100%;
 	padding: 0;
 	width: 69.7%;
+	border-left: 1px solid $light-gray;
+
 }
 .notepad-header{
 	width: 100%;
@@ -95,6 +110,10 @@ textarea{
 }
 
 
+.list-tasks li.focused-task{
+	border: 3px solid $light-gray;
+	padding: 7px;
+} 
 .list-tasks{
 	width: 30%; 
 	float: left;
@@ -103,15 +122,30 @@ textarea{
 		float: left;
 		li{
 			padding: 10px;
-			border-bottom: 1px solid #ccc;
+			border-bottom: 1px solid $light-gray;
+			
 		}
+		li:hover{
+			background-color: $light-gray;
+			color: white;
+			.task-excerpt, .task-title{
+				color: white;
+				 
+			}
+
+			.task-action{
+					display: block;	
+				}
+			}
+			
 	}
 	a{
 		text-decoration: none;
-		color: #888;
+		color: $dark-gray;
 	}
 	a:hover{
-		text-decoration: underline;
+		
+
 	}
 }
 
@@ -119,5 +153,40 @@ textarea{
 	width: 94%;
 	float: left;
 	padding: 3% 3%;
+	
 	border-bottom: 1px solid black;
+}
+
+.task-counter{
+	float: right;
+	color: $dark-gray;
+}
+
+
+.task-excerpt{
+	height: 50px;
+	margin-top: 5px;
+	color: $light-gray;
+	
+	overflow: hidden;
+
+  	
+}
+.task-title{
+	font-size: 22px;
+
+}
+.task-listed{
+	cursor: pointer;
+}
+.task-action{
+	display: none;
+}
+.list-task-title{
+	width: 100%;
+	clear: both;
+	font-size: 26px;
+	margin-bottom: 20px;
+	float: left;
+
 }

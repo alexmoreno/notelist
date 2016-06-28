@@ -41,6 +41,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+/*  */
 html, body {
   height: 100%;
   width: 100%; }
@@ -61,16 +62,23 @@ textarea {
   height: 100%;
   float: left; }
 
-#task-title {
+#notepad-title {
   float: left;
   width: 94%;
-  padding: 1.1% 2.9%; }
+  padding: 1.1% 2.9%;
+  border: 0;
+  font-size: 26px;
+  color: #888; }
+
+#notepad {
+  border: 0; }
 
 .notepad-container {
   float: left;
   height: 100%;
   padding: 0;
-  width: 69.7%; }
+  width: 69.7%;
+  border-left: 1px solid #ccc; }
 
 .notepad-header {
   width: 100%;
@@ -85,6 +93,10 @@ textarea {
 .task-delete {
   float: right; }
 
+.list-tasks li.focused-task {
+  border: 3px solid #ccc;
+  padding: 7px; }
+
 .list-tasks {
   width: 30%;
   float: left; }
@@ -94,14 +106,45 @@ textarea {
     .list-tasks ul li {
       padding: 10px;
       border-bottom: 1px solid #ccc; }
+    .list-tasks ul li:hover {
+      background-color: #ccc;
+      color: white; }
+      .list-tasks ul li:hover .task-excerpt, .list-tasks ul li:hover .task-title {
+        color: white; }
+      .list-tasks ul li:hover .task-action {
+        display: block; }
   .list-tasks a {
     text-decoration: none;
     color: #888; }
-  .list-tasks a:hover {
-    text-decoration: underline; }
 
 .list-tasks-menu {
   width: 94%;
   float: left;
   padding: 3% 3%;
   border-bottom: 1px solid black; }
+
+.task-counter {
+  float: right;
+  color: #888; }
+
+.task-excerpt {
+  height: 50px;
+  margin-top: 5px;
+  color: #ccc;
+  overflow: hidden; }
+
+.task-title {
+  font-size: 22px; }
+
+.task-listed {
+  cursor: pointer; }
+
+.task-action {
+  display: none; }
+
+.list-task-title {
+  width: 100%;
+  clear: both;
+  font-size: 26px;
+  margin-bottom: 20px;
+  float: left; }
